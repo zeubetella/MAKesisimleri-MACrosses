@@ -1,4 +1,4 @@
----------------------------------------- Türkçe Açıklama / Please Scroll Down for English Description -----------------------------------------
+----------------------------- Türkçe Açıklama / Please Scroll Down for English Description -----------------------------
 
 Bu kod, teknik analiz için kullanılan hareketli ortalamaların (MA) kesişimlerini belirleyen ve bu kesişimleri grafiğe işleyen bir indikatör oluşturur. Hareketli ortalamalar, fiyat verilerinin belirli bir zaman aralığındaki ortalamalarını hesaplamak için kullanılır ve trendleri görselleştirmeye yardımcı olurlar.
 
@@ -18,7 +18,7 @@ Bu kodun amacı, hareketli ortalamaların kesişim stratejisini kullanarak finan
 
 Kullanıcılar, MA türlerini ve periyotlarını değiştirerek stratejiyi özelleştirebilir ve grafik üzerindeki işaretlemelerin görünümünü ayarlayabilirler. Bu kod, teknik analiz yapmak isteyenler için bir başlangıç noktası olabilir.
 
------------------------------------------------------------------- English Description ------------------------------------------------------------------
+------------------------------------------- English Description -------------------------------------------
 
 This code creates an indicator that identifies the intersections of moving averages (MA) used in technical analysis and plots these intersections on a chart. Moving averages are used to calculate the average price of an asset over a specific time period and help visualize trends.
 
