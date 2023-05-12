@@ -1,0 +1,59 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// ©zeubetella - 12.05.2023
+// @version=5
+
+indicator('MA Kesişimleri / MA Crosses', overlay=true, format=format.price, precision=2, timeframe="", timeframe_gaps=true)
+
+source = (close)
+
+// Ekranımızda yer alacak birinci MA için hesaplamaların yapıldığı ksım.
+// This is where the calculations for the first moving average (MA) that will appear on our screen are performed.
+
+ma1(source, length, type) =>
+    switch type
+        "WMA" => ta.wma(source, length)
+        "EMA" => ta.ema(source, length)
+        "SMA" => ta.sma(source, length)
+        "VWMA" => ta.vwma(source, length)
+
+maTypeInput1 = input.string("EMA", title="MA Türü / MA Type", options=["WMA","EMA","SMA","VWMA"], group="MA Ayarları / MA Settings")
+maLengthInput1 = input.int(9, title="MA Periyodu / MA Period", group="MA Ayarları / MA Settings")
+
+// Ekranımızda yer alacak ikinci MA için hesaplamaların yapıldığı ksım.
+// This is where the calculations for the second moving average (MA) that will appear on our screen are performed.
+
+ma2(source, length, type) =>
+    switch type
+        "WMA" => ta.wma(source, length)
+        "EMA" => ta.ema(source, length)
+        "SMA" => ta.sma(source, length)
+        "VWMA" => ta.vwma(source, length)
+
+maTypeInput2 = input.string("EMA", title="MA Türü / MA Type", options=["WMA","EMA","SMA","VWMA"], group="MA Ayarları / MA Settings")
+maLengthInput2 = input.int(30, title="MA Periyodu / MA Period", group="MA Ayarları / MA Settings")
+
+// Hareketli ortalamaların grafik üzerinde çizildiği kısım.
+// This is the section where the moving averages are plotted on the chart.
+
+maline1 = ma1(source, maLengthInput1, maTypeInput1)
+maline2 = ma2(source, maLengthInput2, maTypeInput2)
+
+plot(maline1, title='Birinci MA Çizgisi / First MA Line', color=color.new(color.yellow, 0), linewidth=1, display = display.pane)
+plot(maline2, title='İkinci MA Çizgisi / Second MA Line', color=color.new(color.white, 0), linewidth=1, display = display.pane)
+
+// Kesişimlerin tespit edildiği bölüm.
+// This is the section where the intersections are detected.
+
+condcrossover = ta.crossover(ma1(source, maLengthInput1, maTypeInput1), ma2(source, maLengthInput2, maTypeInput2))
+condcrossunder = ta.crossunder(ma1(source, maLengthInput1, maTypeInput1), ma2(source, maLengthInput2, maTypeInput2))
+
+// Kesişimlerin grafik üzerinde işaretlendiği kısım.
+// This is the section where the intersections are marked on the chart.
+
+plotshape(condcrossover, title='Al / Buy', color=color.new(color.green, 0), location=location.belowbar, style=shape.triangleup, size=size.small, offset=0 , display = display.pane)
+plotshape(condcrossunder, title='Sat / Sell', color=color.new(color.red, 0), location=location.abovebar, style=shape.triangledown, size=size.small, offset=0, display = display.pane)
+
+// Kod bitiş...
+// End of the code...
+// Afiyet olsun...
+// Bon appetit...
