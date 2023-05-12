@@ -1,0 +1,39 @@
+---------------------------------------- Türkçe Açıklama / Please Scroll Down for English Description -----------------------------------------
+
+Bu kod, teknik analiz için kullanılan hareketli ortalamaların (MA) kesişimlerini belirleyen ve bu kesişimleri grafiğe işleyen bir indikatör oluşturur. Hareketli ortalamalar, fiyat verilerinin belirli bir zaman aralığındaki ortalamalarını hesaplamak için kullanılır ve trendleri görselleştirmeye yardımcı olurlar.
+
+Kodun çalışma mantığı şu şekildedir:
+
+İlk olarak, kullanıcı tarafından belirlenen MA türü ve periyodu kullanılarak birinci hareketli ortalama (MA1) hesaplanır. MA türü, ağırlıklı ortalama (WMA), üstel ortalama (EMA), basit ortalama (SMA) veya hacme ağırlıklı ortalama (VWMA) olabilir.
+
+Benzer şekilde, kullanıcı tarafından belirlenen ikinci MA türü ve periyodu kullanılarak ikinci hareketli ortalama (MA2) hesaplanır.
+
+Hesaplanan MA1 ve MA2 çizgileri, grafik üzerinde görselleştirilir. Bu, fiyat grafiğiyle birlikte MA1 ve MA2'nin hareketini takip etmeyi sağlar.
+
+MA1 çizgisi, MA2 çizgisini yukarıdan keserse, bu bir "al" sinyali olarak kabul edilir. Tam tersi durumda, MA1 çizgisi MA2 çizgisini aşağıdan keserse, bu bir "sat" sinyali olarak kabul edilir.
+
+Kesişim noktaları, grafik üzerinde uygun şekillerle işaretlenir. "Al" sinyalleri yeşil üçgenlerle gösterilirken, "Sat" sinyalleri kırmızı aşağı üçgenlerle gösterilir.
+
+Bu kodun amacı, hareketli ortalamaların kesişim stratejisini kullanarak finansal piyasalarda al-sat sinyallerini belirlemektir.
+
+Kullanıcılar, MA türlerini ve periyotlarını değiştirerek stratejiyi özelleştirebilir ve grafik üzerindeki işaretlemelerin görünümünü ayarlayabilirler. Bu kod, teknik analiz yapmak isteyenler için bir başlangıç noktası olabilir.
+
+------------------------------------------------------------------ English Description ------------------------------------------------------------------
+
+This code creates an indicator that identifies the intersections of moving averages (MA) used in technical analysis and plots these intersections on a chart. Moving averages are used to calculate the average price of an asset over a specific time period and help visualize trends.
+
+Here's how the code works:
+
+Firstly, the first moving average (MA1) is calculated using the MA type and period determined by the user. The MA type can be weighted moving average (WMA), exponential moving average (EMA), simple moving average (SMA), or volume-weighted moving average (VWMA).
+
+Similarly, the second moving average (MA2) is calculated using the MA type and period specified by the user.
+
+The calculated MA1 and MA2 lines are visualized on the chart. This allows tracking the movement of MA1 and MA2 along with the price chart.
+
+If the MA1 line crosses above the MA2 line, it is considered a "buy" signal. Conversely, if the MA1 line crosses below the MA2 line, it is considered a "sell" signal.
+
+The intersection points are marked on the chart using appropriate shapes. "Buy" signals are represented by green triangles, while "sell" signals are represented by red downward triangles.
+
+The purpose of this code is to determine buy-sell signals in financial markets using the intersection strategy of moving averages.
+
+Users can customize the strategy by changing the MA types and periods and adjust the appearance of the markings on the chart. This code can serve as a starting point for those interested in performing technical analysis.
